@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Field</title>
+    <style>
+        /* Hide the default checkbox */
+        #chargeSwitcher {
+            display: none;
+        }
+
+        /* Create a custom checkbox */
+        #chargeSwitcher + label {
+            position: relative;
+            padding-left: 35px;
+            cursor: pointer;
+        }
+
+        #chargeSwitcher + label:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -3px;
+            width: 25px;
+            height: 25px;
+            border: 2px solid #000;
+            border-radius: 50%;
+        }
+
+        /* Style the custom checkbox when it's checked */
+        #chargeSwitcher:checked + label:before {
+            background-color: red;
+        }
+
+        /* Style the custom checkbox when it's not checked */
+        #chargeSwitcher:not(:checked) + label:before {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="checkbox" id="chargeSwitcher">
+    <label for="chargeSwitcher"></label>
+</div>
+<canvas id="field" style="height: 90vh; width: 100vw"></canvas>
+<script src="main.js" type="module"></script>
+</body>
+</html>
