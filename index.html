@@ -38,8 +38,9 @@
         }
     </style>
 </head>
-<body>
-<div>
+<body style="margin: 0">
+<div style="position: fixed">
+    <div style="border-radius: 10pt; background: azure; width: fit-content; padding: 10pt">
     <div style="margin: 10pt">
         <input type="checkbox" id="chargeSwitcher">
         <label for="chargeSwitcher">Positive (red) / Negative (blue)</label>
@@ -54,10 +55,12 @@
     </div>
     <div>
         <input type="number" id="precision">
-        <label for="precision">Precision (def 0.033)</label>
+        <label for="precision">Precision (def 1)</label>
+    </div>
+    <p>To remove charge, move mouse on it and press backspace.</p>
     </div>
 </div>
-<canvas id="field" style="height: 90vh; width: 100vw"></canvas>
+<canvas id="field" style="height: 100vh; width: 100%"></canvas>
 <script src="main.js" type="module"></script>
 </body>
 </html>
