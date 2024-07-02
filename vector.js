@@ -57,6 +57,12 @@ class Vector {
         return new Vector(x, y, z);
     }
 
+    rotate_clockwise(angle) {
+        var x = this.dx * Math.cos(angle) - this.dy * Math.sin(angle);
+        var y = this.dx * Math.sin(angle) + this.dy * Math.cos(angle);
+        return new Vector(x, y, this.dz);
+    }
+
     copy() {
         return new Vector(this.dx, this.dy, this.dz)
     }

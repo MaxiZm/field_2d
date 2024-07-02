@@ -40,8 +40,22 @@
 </head>
 <body>
 <div>
-    <input type="checkbox" id="chargeSwitcher">
-    <label for="chargeSwitcher"></label>
+    <div style="margin: 10pt">
+        <input type="checkbox" id="chargeSwitcher">
+        <label for="chargeSwitcher">Positive (red) / Negative (blue)</label>
+    </div>
+    <div>
+        <input type="number" id="rayNum">
+        <label for="rayNum">Number of Rays (def 8)</label>
+    </div>
+    <div>
+        <input type="number" id="length">
+        <label for="length">Length of Rays (def 1000)</label>
+    </div>
+    <div>
+        <input type="number" id="precision">
+        <label for="precision">Precision (def 0.033)</label>
+    </div>
 </div>
 <canvas id="field" style="height: 90vh; width: 100vw"></canvas>
 <script src="main.js" type="module"></script>
