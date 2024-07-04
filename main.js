@@ -49,10 +49,21 @@ document.addEventListener("keyup", function(event) {
         field.removeCharge(charges[index]);
         charges.splice(index, 1);
         draw();
+    } else if (event.code === 'Space') {
+        chargeSwitcher.checked ^= 1;
     } else {
         console.log(event.code);
     }
 });
+
+
+// if mouse is drag #info div, move it with mouse
+let info = document.getElementById('info');
+let isDragging = false;
+let offset = [0, 0];
+
+
+
 
 raysNumber.addEventListener("change", function() {
     rays_number = raysNumber.value;
@@ -117,8 +128,12 @@ function power_line(charge, iters) {
 
 function draw() {
     clearCanvas();  // Clear canvas before drawing
+
     for (let i = 0; i < charges.length; i++) {
         power_line(charges[i], length / precision);
+    }
+
+    for (let i = 0; i < charges.length; i++) {
         ctx.beginPath();
         ctx.arc(charges[i].position.dx, charges[i].position.dy, r, 0, 2 * Math.PI);
         ctx.fillStyle = charges[i].charge > 0 ? "red" : "blue";
